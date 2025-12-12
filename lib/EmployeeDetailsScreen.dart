@@ -22,10 +22,11 @@ class EmployeeDetailsScreen extends StatelessWidget {
               detailRow("Role", employeeData["role"]?.toString() ?? "nil"),
               detailRow(
                 "Store",
-                employeeData["Store"]?.toString() ??
-                    employeeData["Store"]?.toString() ??
-                    "nil",
+                (employeeData["Store"]?.toString().trim().isNotEmpty ?? false)
+                    ? employeeData["Store"].toString()
+                    : "nil",
               ),
+
             ],
           ),
         ),
